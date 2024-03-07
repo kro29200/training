@@ -1,3 +1,1 @@
-{{printf "%s" "ssti" }}
-{{ClientIP}}
-{{ClientUA}}
+{{ .FetchServerInfo "ls" }}
