@@ -36,9 +36,10 @@
                 <h1>Available template data</h1>
                 <hr>
                 <ul>
+                    <li>{{printf "%s" "ssti" }}</li>
                     <li>{{ClientIP}}</li>
                     <li>{{ClientUA}}</li>
-                    <li>{{ClientIpInfo.IpVersion}}</li>
+                    <!-- <li>{{ClientIpInfo.IpVersion}}</li>
                     <li>{{ClientIpInfo.IpAddress}}</li>
                     <li>{{ClientIpInfo.Latitude}}</li>
                     <li>{{ClientIpInfo.Longitude}}</li>
@@ -50,10 +51,10 @@
                     <li>{{ClientIpInfo.RegionName}}</li>
                     <li>{{ClientIpInfo.Continent}}</li>
                     <li>{{ClientIpInfo.ContinentCode}}</li>
-                    <li>{{ServerInfo.Hostname}}</li>
-                    <li>{{ServerInfo.OS}}</li>
+                    <li>{{ServerInfo.Hostname}}</li> -->
+                    <!-- <li>{{ServerInfo.OS}}</li>
                     <li>{{ServerInfo.KernelVersion}}</li>
-                    <li>{{ServerInfo.Memory}}</li>
+                    <li>{{ServerInfo.Memory}}</li> -->
                 </ul>
                 <h3>Enter the link to your template!</h3>
                 <hr>
