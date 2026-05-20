@@ -53,13 +53,10 @@ sudo timedatectl set-timezone Europe/Paris
 
 Add a Reverse Proxy to expose any applications.
 
-#### Firewall
+#### Routing
 
-Enable firewall: 
+Iptables only because of Docker : https://docs.docker.com/engine/install/ubuntu/#firewall-limitations
 
-```
-sudo ufw enable
-```
 
 ##### Configuration 
 
@@ -70,6 +67,11 @@ https://ubuntu.com/server/docs/how-to/security/firewalls/#open-or-close-a-port
 https://ubuntu.com/server/docs/how-to/security/apparmor/
 
 
+### Container  (docker)
+
+https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+
+https://docs.docker.com/engine/install/linux-postinstall/
 
 ### Applications
 
@@ -77,5 +79,22 @@ https://ubuntu.com/server/docs/how-to/security/apparmor/
 
 #### Nextcloud
 
+##### Run AIO
+```bash
+# For Linux and without a web server or reverse proxy already in place:
+sudo docker run \
+  --init \
+  --sig-proxy=false \
+  --name nextcloud-aio-mastercontainer \
+  --restart always \
+  --publish 8080:8080 \
+  --volume nextcloud_aio_mastercontainer:/mnt/docker-aio-config \
+  --volume /var/run/docker.sock:/var/run/docker.sock:ro \
+  ghcr.io/nextcloud-releases/all-in-one:latest
+```
+
+##### Expose behind RP
+
+https://github.com/nextcloud/all-in-one/blob/main/reverse-proxy.md
 
 #### CISO Assistant
